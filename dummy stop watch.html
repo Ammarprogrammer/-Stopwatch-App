@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: cover;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .head{
+            padding:20px 0 20px 0;
+            background-color: teal;
+            text-align: center;
+            /* position: relative; */
+        }
+
+        .logo:after{
+            background-color: rgb(112, 177, 171);
+            content: "";
+            display: block;
+            /* width: 0px; */
+            height:3px;
+            margin: 10px auto;
+            /* position: absolute; */
+            /* left: 0; */
+            /* bottom: 0; */
+            /* text-align: center; */
+        }
+        .logo:hover::after{
+            animation-name: animate;
+            animation-duration: 2s;
+            animation-delay: 0.2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+        }
+        .time{
+            /* margin: 20px 0 20px 570px; */
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            content: "";
+            position: absolute;
+            top:30px;
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            z-index: -1;
+            border-radius: 50%;
+            border: solid black;
+            
+            /* padding: 75px 50px; */
+            /* gap: 30px; */
+            /* text-align: center; */
+        }
+
+        .AM{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+            /* top: -31%;
+            left: -118%; */
+        }
+        .interval{
+            width: 250px;
+            height: 260px;
+            background-color: rgb(112, 177, 171);
+            margin: 250px 0 0 0;
+            /* padding: 20px; */
+            /* position: relative; */
+        }
+        .sub-head{
+            padding: 10px 0 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .start{
+            padding: 10px 0 10px 30px;
+        }
+
+        .Stop{
+            padding: 0 0 10px 30px;
+        }
+        .Stop-watch{
+            padding: 0 0 0 30px;
+        }
+        .buttton{
+            /* padding: 0 0 10px 30px; */
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            /* color: teal!important; */
+            
+        }
+        .btn{
+            background: teal;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: 0.4s;
+            border-radius: 10px;
+            /* border: none; */
+            outline: none;
+            width: 35%;
+
+        }
+
+        .btn:hover{
+            background: #fff;
+            color: teal;
+        }
+
+        .Stopwatching{
+            width: 250px;
+            height: 260px;
+            background-color: rgb(112, 177, 171);
+            /* display: flex; */
+            margin: 250px 0 0 100px;
+            text-align: center;
+            padding: 90px 0 0 0;
+            /* gap: 20px; */
+            
+        }
+        .meter{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .but{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+        .start-time ,.stop-time ,.reset-time{
+            background-color: teal;
+            border-radius: 20px;
+            box-sizing: border-box;
+            /* width: 10px; */
+        }
+        .start-time {
+            width: 30px;
+
+        }
+        .start-time:hover ,.stop-time:hover ,.reset-time:hover{
+            background: white;
+            color: teal;
+            border: none;
+            cursor:pointer;
+        }
+
+        @keyframes animate {
+            0%{
+                width: 0%;
+                left: 0%;
+            }
+            50%{
+                 width: 20%;
+                 left: 0%;
+            }
+            100%{
+                width: 0%;
+                left: 20;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="head">
+            <h1 class="logo"> ~:Stop Watch:~ </h1>
+        </div>
+    </header>
+<div class="meter">
+    <!-- <div class="border"> -->
+    <div class="time">
+        <b>
+       <b><b><h1 class="AM">12:38 AM</h5></b></b></b>
+    </div>
+    <!-- </div> -->
+    <div class="interval">
+        <h3 class="sub-head">Clock Time</h3>
+        <div class="start">
+        <h5>Start Clock Time:~</h5>
+        <p>12:59 AM</p>
+        </div>
+        <div class="Stop">
+        <h5>Stop Clock Time:~</h5>
+        <p>1:59 AM</p>
+        </div>
+        <div class="Stop-watch">
+        <h5>Stop Watch Time:~</h5>
+        <p>00 hr: 00 mint: 00 sec</p>
+        </div>
+        <div class="buttton">
+            <button class="btn">Reset</button>
+        </div>
+
+    </div>
+    
+    <div class="Stopwatching">
+        <h1 class="h1">00:00:00</h1>
+        <div class="but">
+            <button class="stop-time">
+                <i class="fa-regular fa-circle-stop"></i>
+            </button>
+            <button class="start-time">
+                <i class="fa-brands fa-google-play"></i>
+            </button>
+            <button class="reset-time">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
